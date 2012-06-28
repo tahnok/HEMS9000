@@ -85,7 +85,7 @@ void setup() {
 
 void loop() {
   // read the analog sensor:
-  int sensorReading = getTemp();
+  float sensorReading = getTemp();
 
   // if there's incoming data from the net connection.
   // send it out the serial port.  This is for debugging
@@ -114,7 +114,7 @@ void loop() {
 }
 
 // this method makes a HTTP connection to the server:
-void sendData(int thisData) {
+void sendData(float thisData) {
   // if there's a successful connection:
   if (client.connect(server, 80)) {
     Serial.println("connecting...");
